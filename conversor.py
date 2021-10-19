@@ -21,11 +21,11 @@ class Tela:
         self.bt.place(x=260, y=48, width=120)
         self.bt.bind("<Button-1>", self.baixar)
 
-        self.bt3 = tk.Button(janela, text="Baixar MP4")
-        self.bt3["font"] = ("Lucida Console", "13")
-        self.bt3.config(bg="green", foreground="white")
-        self.bt3.place(x=400, y=48, width=120)
-        self.bt3.bind("<Button-1>", self.baixar2)
+        #.bt3 = tk.Button(janela, text="Baixar MP4")
+        #self.bt3["font"] = ("Lucida Console", "13")
+        #self.bt3.config(bg="green", foreground="white")
+        #self.bt3.place(x=400, y=48, width=120)
+        #self.bt3.bind("<Button-1>", self.baixar2)
 
         self.bt2 = tk.Button(janela, text="Limpar")
         self.bt2["font"] = ("Lucida Console", "13")
@@ -44,12 +44,12 @@ class Tela:
         lk = ("youtube-dl --extract-audio --audio-format mp3 ")+(lnk)
         os.system(lk)
 
-    def baixar2(self, event):
+   # def baixar2(self, event):
 
-        lnk = self.linkE.get()
+      #  lnk = self.linkE.get()
 
-        lk = ("youtube-dl  --audio-format mp4 ") + (lnk)
-        os.system(lk)
+      #  lk = ("youtube-dl  --excract-audio --audio-format mp4 ") + (lnk)
+      #  os.system(lk)
 
     def limpar(self, event):
 
