@@ -18,14 +18,20 @@ class Tela:
         self.bt = tk.Button(janela, text="Baixar MP3")
         self.bt["font"] = ("Lucida Console", "13")
         self.bt.config(bg="red", foreground="white")
-        self.bt.place(x=320, y=48, width=120)
+        self.bt.place(x=260, y=48, width=120)
         self.bt.bind("<Button-1>", self.baixar)
+
+        self.bt3 = tk.Button(janela, text="Baixar MP4")
+        self.bt3["font"] = ("Lucida Console", "13")
+        self.bt3.config(bg="green", foreground="white")
+        self.bt3.place(x=400, y=48, width=120)
+        self.bt3.bind("<Button-1>", self.baixar2)
 
         self.bt2 = tk.Button(janela, text="Limpar")
         self.bt2["font"] = ("Lucida Console", "13")
         self.bt2.config(bg="black", foreground="red")
-        self.bt2.place(x=210, y=48, width=80)
-        self.bt2.bind("<Button-1>", self.baixar2)
+        self.bt2.place(x=170, y=48, width=80)
+        self.bt2.bind("<Button-1>", self.limpar)
 
 
 
@@ -35,10 +41,17 @@ class Tela:
 
         lnk = self.linkE.get()
 
-        lk = ("start youtube-dl --extract-audio --audio-format mp3 ")+(lnk)
+        lk = ("youtube-dl --extract-audio --audio-format mp3 ")+(lnk)
         os.system(lk)
 
     def baixar2(self, event):
+
+        lnk = self.linkE.get()
+
+        lk = ("youtube-dl  --audio-format mp4 ") + (lnk)
+        os.system(lk)
+
+    def limpar(self, event):
 
         self.linkE.delete(0, "end")
 
@@ -48,7 +61,7 @@ janela = tk.Tk()
 
 Tela(janela)
 janela.config(bg="black")
-janela.geometry("500x100")
-janlea.title("COOLVERSOR")
+janela.geometry("700x100")
+janela.title("Conversor de vídeos do Youtube")
 janela.resizable(width=False, height=False)
 janela.mainloop()
